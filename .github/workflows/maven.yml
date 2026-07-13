@@ -38,16 +38,12 @@ jobs:
         cd base_code
         mvn -B package --file pom.xml
 
-    - name: Docker image and list docker images
-      run: |
-        docker build . --tag academy:$(date +%s)
-        docker image ls
+    - name: Docker image
+      run: docker build . --tag academy:$(date +%s)
       working-directory: ./base_code
 
-
-
-
-      
-      
+    - name: list docker images
+      run: docker image ls
+      working-directory: ./base_code
 
     
