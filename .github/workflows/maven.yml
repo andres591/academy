@@ -37,6 +37,12 @@ jobs:
       run: |
         cd base_code
         mvn -B package --file pom.xml
+
+    - name: Docker image
+      run: |
+        cd base_code 
+        docker build . --tag academy:$(date +%s)
+
       
       
 
